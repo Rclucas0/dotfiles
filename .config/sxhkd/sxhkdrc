@@ -1,0 +1,12 @@
+super + BackSpace
+	pkill -USR1 -x sxhkd
+
+
+super + {_}{w,d,Return}
+	{brave,rofi -show drun,alacritty}
+
+alt + {_}{d,p,s,h}
+	{discord,flameshot gui,steam,heroic}
+
+super + shift + Return
+	nemo

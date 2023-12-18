@@ -1,0 +1,74 @@
+auto-reload yes
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+
+color listnormal green default
+color listfocus black yellow standout bold  
+color listnormal_unread blue default
+color listfocus_unread yellow default bold
+color info red black bold
+color article cyan default
+
+#highlight article "^Feed:.*" color5 color0
+#highlight article "^Title:.*" color3 color0 bold
+#highlight article "^Author:.*" color2 color0
+#highlight article "^Date:.*" color223 color0
+#highlight article "^Link:.*" color4 color0
+#highlight article "^Flags:.*" color9 color0
+#highlight article "\\[[0-9][0-9]*\\]" color66 default bold
+#highlight article "\\[image [0-9][0-9]*\\]" color109 default bold
+#highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
+
+
+
+
+
+#color listnormal default default
+#color listfocus default default reverse
+#color listnormal_unread default default bold
+#color listfocus_unread default default bold underline
+#color info red black bold
+#color article default default
+
+highlight article "^Feed:.*" magenta default 
+highlight article "^Title:.*" yellow default bold
+highlight article "^Author:.*" green default
+highlight article "^Date:.*" color223 default
+highlight article "^Link:.*" blue default
+highlight article "^Flags:.*" color9 default
+highlight article "\\[[0-9][0-9]*\\]" color66 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color109 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
+
+#highlight feedlist "[╒╘╞]═.*═[╛╕╡]" yellow default bold
+highlight feedlist "[║│]" yellow default bold
+#highlight feedlist "╠═.*" yellow default bold
+
+highlight feedlist "\\(News\\) .*" yellow
+highlight feedlist "\\(Youtube\\) .*" red
+highlight feedlist "\\(Twitter\\) .*" blue
+highlight feedlist "\\(Reddit\\) .*" green
+highlight feedlist "\\(Podcast\\) .*" magenta
+highlight feedlist "\\(Blog\\) .*" cyan
+highlight feedlist "\\(Reddit\\) .*" color166 
+
+
+feedlist-format "%?T?║%4i %n %8u (%T) %t &╠═════════════════════════════════════════════════════%t?"
+#feedlist-format "%?T?║%4i %n %8u (%T) %t &╠%=═0%t?"
+#feedlist-format "%?T?║%4i %n %8u (%T) %t &%==11first%=x16SECOND%=~13third?"
+
+
+
+
+browser brave-browser
+macro w set browser "mpv --ontop %u" ; open-in-browser ; set browser linkhandler 
+
+#browser sensible-browser
+
+
+player "mpv"
+
+podlist-format "%i %u %-20S %F"
+
+
+#Keybinds
+bind-key ; macro-prefix
