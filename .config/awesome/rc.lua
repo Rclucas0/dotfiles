@@ -1,7 +1,3 @@
--- If LuaRocks is installed, make sure that packages installed through it are
--- found (e.g. lgi). If LuaRocks is not installed, do nothing.
-pcall(require, "luarocks.loader")
-
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -11,7 +7,7 @@ local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
---local naughty = require("naughty")
+local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
@@ -20,8 +16,6 @@ require("awful.hotkeys_popup.keys")
 
 
 -- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
@@ -45,7 +39,6 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/rileyl/.config/awesome/themes/dracula/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
@@ -53,11 +46,6 @@ terminal = "alacritty"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -91,14 +79,6 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
-
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
@@ -107,11 +87,11 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
+-- {{{ Clock & Calendar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock(" %a %b %d, %I:%M%p ")
-
-
-awesome.set_preferred_icon_size(32)
+-- }}}
+awesome.set_preferred_icon_size(30)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -225,7 +205,6 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -495,7 +474,7 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    -- Set Steam to always map on the tag named "8" on screen 1.
+    -- Application Rules 
      { rule = { class = "steam" },
        properties = { screen = 1, tag = "8", switchtotag = true } },
 
@@ -549,4 +528,4 @@ awful.spawn.with_shell("picom -b")
 awful.spawn.with_shell("xfce4-power-manager")
 awful.spawn.with_shell("xfce4-screensaver")
 awful.spawn.with_shell("exec /usr/lib/polkit-kde-authentication-agent-1")
-awful.spawn.with_shell("exec /usr/bin/dunst")
+--awful.spawn.with_shell("exec /usr/bin/dunst")

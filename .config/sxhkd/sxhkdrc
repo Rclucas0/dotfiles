@@ -5,8 +5,9 @@ super + BackSpace
 super + {_}{w,d,Return}
 	{brave,rofi -show drun,alacritty}
 
-alt + {_}{d,p,s,h}
-	{discord,flameshot gui,steam,heroic}
+alt + {_}{d,p,s,a}
+	{discord,flameshot gui,steam,st}
 
 super + shift + Return
 	nemo
+
