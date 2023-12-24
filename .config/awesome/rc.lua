@@ -45,8 +45,7 @@ beautiful.init("/home/rileyl/.config/awesome/themes/dracula/theme.lua")
 awesome.set_preferred_icon_size(32)
 
 -- Enable gaps
-beautiful.useless_gap = 3
-beautiful.gap_single_client = true
+-- beautiful.useless_gap = 0
 
 -- Fix window snapping
 awful.mouse.snap.edge_enabled = true
@@ -259,8 +258,8 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
-              {description = "open a terminal", group = "launcher"}),
+    -- awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    --        {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -497,7 +496,12 @@ awful.rules.rules = {
 		 
 		 { rule = { class = "heroic" },
        properties = { screen = 1, tag = "7", switchtotag = true } },
- 
+     
+		 { rule = { class = "PrismLauncher" },
+       properties = { screen = 1, tag = "7", switchtotag = true } },
+
+		 { rule = { class = "st" },
+       properties = { screen = 1, tag = "2", switchtotag = true } },
 
 
 }

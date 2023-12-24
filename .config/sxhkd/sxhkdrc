@@ -1,14 +1,17 @@
 super + BackSpace
 	pkill -USR1 -x sxhkd
 
-super + {_}{w,d,Return}
-	{brave,rofi -show drun,alacritty}
+super + {_}{w,d,a,Return}
+	{brave,rofi -show drun,alacritty,st}
 
 super + shift + {_}{Return}
 	{nemo}
 
-alt + {_}{d,p,s,a,r,h}
-	{discord,flameshot gui,steam,st,dmenu_run,flatpak run com.heroicgameslauncher.hgl}
+alt + {_}{d,s,r,h,m}
+	{discord,steam,dmenu_run,flatpak run com.heroicgameslauncher.hgl,prismlauncher}
 
-alt + shift + {_}{p}
+alt + shift + {_,}{p}
 	{pavucontrol}
+
+ctrl + {_}{p}
+	{flameshot gui}
