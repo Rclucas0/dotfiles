@@ -12,7 +12,7 @@ local theme = {}
 -- }}}
 
 -- {{{ Styles
-theme.font      = "JetBrainsMono Nerd Font 11"
+theme.font      = "JetBrainsMono Nerd Font 9"
 
 -- {{{ Colors
 theme.fg_normal  = "#F8F8F2"

@@ -42,7 +42,7 @@ end
 beautiful.init("/home/rileyl/.config/awesome/themes/dracula/theme.lua")
 
 -- Use correct status icon size
-awesome.set_preferred_icon_size(32)
+awesome.set_preferred_icon_size(30)
 
 -- Enable gaps
 -- beautiful.useless_gap = 0
@@ -451,7 +451,6 @@ awful.rules.rules = {
           "pinentry",
         },
         class = {
-					"steam",
 					"surf",
 					"mpv",
           "Arandr",
@@ -500,8 +499,6 @@ awful.rules.rules = {
 		 { rule = { class = "PrismLauncher" },
        properties = { screen = 1, tag = "7", switchtotag = true } },
 
-		 { rule = { class = "st" },
-       properties = { screen = 1, tag = "2", switchtotag = true } },
 
 
 }

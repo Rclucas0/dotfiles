@@ -2,7 +2,7 @@ super + BackSpace
 	pkill -USR1 -x sxhkd
 
 super + {_}{w,d,a,Return}
-	{brave,rofi -show drun,alacritty,st}
+	{brave,rofi -show drun,st,alacritty}
 
 super + shift + {_}{Return}
 	{nemo}
